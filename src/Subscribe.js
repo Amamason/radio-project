@@ -1,69 +1,66 @@
-import React from 'react';
+import React, { useState } from "react";
+
+function Subscribe() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [submittedData, setSubmittedData] = useState([]);
+  const [comment, setComment] = useState("");
 
 
-function Subscribe(){
+  function handleFirstNameChange(event) {
+    setFirstName(event.target.value);
+  }
 
-    return <div>
-        Subscribe to our boombox!
+  function handleLastNameChange(event) {
+    setLastName(event.target.value);
+  }
+
+  function handleComment(event) {
+    setComment(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = { firstName: firstName, lastName: lastName, comment: comment };
+    const dataArray = [...submittedData, formData];
+    setSubmittedData(dataArray);
+    setFirstName("");
+    setLastName("");
+    setComment("");
+  }
+
+  const listOfSubmissions = submittedData.map((data, index) => {
+    return (
+      <div key={index}>
+        {data.firstName} {data.lastName} {data.comment}
+      </div>
+    );
+  });
+
+  return (
+    <div className="subscribeForm">
+
+      <h3>Subscribe to RadioStar</h3>
+
+
+      <form onSubmit={handleSubmit}>
+        <label> First name
+        <input type="text" onChange={handleFirstNameChange} value={firstName} />
+        </label>
+
+        <label> Last name
+        <input type="text" onChange={handleLastNameChange} value={lastName} />
+        </label>
+        
+        <label> Tell us what you think
+        <textarea  onChange={handleComment} value={comment} />
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+      {listOfSubmissions}
     </div>
+  );
 }
 
-export default Subscribe;
-
-/*
-const [formData, setFormData] = useState({
-  username: "",
-  password: "",
-});
-
-//since the id values are the same as the keys in formData, we can write an abstract setFormData here
-function handleChange(event) {
-  setFormData({
-    ...formData,
-    [event.target.id]: event.target.value,
-  });
-}
-
-return (
-  <form onSubmit={this.handleSubmit}>
-    <input
-      type="text"
-      id="username"
-      value={formData.username}
-      onChange={handleChange}
-    />
-    <input
-      type="text"
-      id="password"
-      value={formData.password}
-      onChange={handleChange}
-    />
-  </form>
-); 
-
-
-function handleSubmit(event) {
-  event.preventDefault();
-  fetch("the server URL", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
-} 
-
-
-
-POST /questions
-
-Required Headers:
-{ "Content-Type": "application/json" }
-
-Body:
-{
-  "prompt": string,
-  "answers": array of strings,
-  "correctIndex": integer
-} 
-*/
+export default Subscribe; 

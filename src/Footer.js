@@ -4,7 +4,8 @@ import React from 'react';
 function Footer(){
 
     return <div className="Footer">
-        stuff at the bottom!
+        <p> Video definitely did not kill the radio star. copyright 2022 </p>
+            
     </div>
 }
 
