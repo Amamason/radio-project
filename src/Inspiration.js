@@ -42,12 +42,12 @@ render() {
 return (
   <div className="imageGallery">
       <div className="masterImage">
-        <img src={this.state.picList[this.state.index]} style={{"maxHeight":"60%","maxWidth":"60%"}} alt="bighairstyle" />
+        <img src={this.state.picList[this.state.index]} style={{"maxHeight":"40%","maxWidth":"40%"}} alt="bighairstyle" />
       </div>
     
     <div className="hairButtons">
-        <button onClick={this.onClickPrevious}> Last Hairstyle </button>
-        <button onClick={this.onClickNext}> Next Hairstyle </button>
+        <button className="previousButton" onClick={this.onClickPrevious}> Previous Hairstyle </button>
+        <button className="nextButton" onClick={this.onClickNext}> Next Hairstyle </button>
     </div>
   </div>
 );

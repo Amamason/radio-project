@@ -17,7 +17,6 @@ code {
 }
 
 
-
 .filterButton {
   width: 85px;
   border-radius: 9px;
@@ -37,8 +36,6 @@ code {
   box-shadow: 0 5px rgb(65, 63, 63);
   transform: translateY(4px);
 }
-
-
 
 .boomBox {
   position: absolute;
