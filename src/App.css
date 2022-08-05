@@ -1,32 +1,6 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -36,3 +10,131 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  background: white;
+
+}
+
+.radio {
+  max-width: 60em;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;  
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 95px;
+  font-size: 1.2rem;
+  padding: 20px;
+  z-index: 500;
+}
+
+.station {
+  width: 230px;
+  height: 140px;
+  margin-left: 399px;
+  margin-top: 393px;
+  background-color: rgb(242, 242, 110);
+  font-size: 1.5rem;
+  border: 2px solid rgb(9, 9, 9);
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+
+}
+
+.stationName {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  width: 100%;
+  align-items: left;
+}
+
+.name {
+  font-size: .5em;
+  color: blueviolet;
+  line-height: 1.3em;
+  width: 70%;
+  text-align: left;
+}
+
+.stationName img {
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 10%;
+  border: 2px solid rgb(76, 62, 95);
+  margin: 0 0.25em;
+}
+
+audio {
+  width: 100%;
+}
+
+.rhap_container.player {
+  background-color: rgb(255, 9, 239);
+  display: flex;
+  justify-items: center;
+  padding: 0.25em 0.75em;
+  border-radius: 10px;
+}
+
+.rhap_stacked .rhap_controls-section {
+  margin-top: 0 !important;
+}
+
+.rhap_controls-section .rhap_volume-controls {
+  justify-content: center;
+}
+
+.rhap_controls-section .rhap_main-controls button[aria-label="Play"] svg path {
+  fill: rgb(14, 251, 255) !important;
+}
+
+.rhap_main-controls button:active {
+  background-color: #941985;
+  box-shadow: 0 5px rgb(65, 63, 63);
+  transform: translateY(4px);
+}
+
+.rhap_controls-section .rhap_main-controls button[aria-label="Pause"] svg path {
+  fill: #5d5d5d !important;
+}
+
+.navbuttons {
+  display: flex;
+  margin-left: 700px;
+  position: absolute right;
+  margin-top: 20px;
+  z-index: 600;
+}
+
+
+.imageGallery {
+
+  display: flex inline-block;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 60px;
+}
+
+.masterImage {
+  margin-top: 50px;
+}
+
