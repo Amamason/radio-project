@@ -32,7 +32,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;  
   position: absolute;
-  margin-top: 160px;
+  margin-top: 200px;
   margin-left: 95px;
   font-size: 1.2rem;
   padding: 20px;
@@ -43,7 +43,7 @@ body {
   width: 230px;
   height: 140px;
   margin-left: 399px;
-  margin-top: 360px;
+  margin-top: 395px;
   background-color: rgb(242, 242, 110);
   font-size: 1.5rem;
   border: 2px solid rgb(9, 9, 9);
@@ -118,15 +118,36 @@ audio {
 
 .navbuttons {
   display: flex;
-  margin-left: 700px;
-  position: absolute right;
-  margin-top: 20px;
+  position: absolute;
+  align-items: right;
+  margin-left: 560px;
+  margin-right: 0;
+  margin-top: 35px;
   z-index: 600;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  z-index: 405;
 }
 
+.homebutton{
+  color: rgb(250, 5, 242);
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.subscribebutton{
+  color: rgb(103, 4, 190);
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.inspirationbutton{
+  color: rgb(4, 220, 220);
+  padding-right: 10px;
+  text-decoration: none;
+}
 
 .imageGallery {
-
   display: flex inline-block;
   align-items: center;
   justify-content: center;

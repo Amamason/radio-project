@@ -11,9 +11,9 @@ return (
     </div>
 
     <div className='navbuttons'>
-    <NavLink exact to="/">Home</NavLink>
-    <NavLink exact to="/subscribe">Subscribe</NavLink>
-    <NavLink exact to="/inspiration">Inspiration</NavLink>
+    <NavLink className ="homebutton" exact to="/">Home</NavLink>
+    <NavLink className ="subscribebutton" exact to="/subscribe">Subscribe</NavLink>
+    <NavLink className ="inspirationbutton" exact to="/inspiration">Inspiration</NavLink>
     </div>
 
     </React.Fragment>
