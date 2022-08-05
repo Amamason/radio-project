@@ -5,17 +5,18 @@ import {NavLink} from "react-router-dom";
 function Header (){
 return (
     <React.Fragment>
-    
-    <div className="weblogo">
-    <img src={image} alt="" width={300}/>
-    </div>
-
+    <div className="headerContainer">
     <div className='navbuttons'>
     <NavLink className ="homebutton" exact to="/">Home</NavLink>
     <NavLink className ="subscribebutton" exact to="/subscribe">Subscribe</NavLink>
     <NavLink className ="inspirationbutton" exact to="/inspiration">Inspiration</NavLink>
     </div>
 
+    <div className="weblogo">
+    <img src={image} alt="" width={300}/>
+    </div>
+
+    </div>
     </React.Fragment>
 );
 }

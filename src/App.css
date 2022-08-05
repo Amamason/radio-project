@@ -2,14 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .App {
   display: flex;
@@ -32,7 +24,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;  
   position: absolute;
-  margin-top: 200px;
+  margin-top: 115px;
   margin-left: 95px;
   font-size: 1.2rem;
   padding: 20px;
@@ -43,7 +35,7 @@ body {
   width: 230px;
   height: 140px;
   margin-left: 399px;
-  margin-top: 395px;
+  margin-top: 305px;
   background-color: rgb(242, 242, 110);
   font-size: 1.5rem;
   border: 2px solid rgb(9, 9, 9);
@@ -117,18 +109,20 @@ audio {
 }
 
 .navbuttons {
-  display: flex;
   position: absolute;
-  align-items: right;
-  margin-left: 560px;
-  margin-right: 0;
-  margin-top: 35px;
+  margin-left: 500px;
+  margin-top: 25px;
+  padding-left: 4em;
   z-index: 600;
   font-family: 'Press Start 2P', cursive;
   font-size: 1rem;
-  z-index: 405;
 }
 
+.headerContainer {
+  display: inline-flex;
+  justify-content: left;
+  margin-left: 20px;
+}
 .homebutton{
   color: rgb(250, 5, 242);
   padding-right: 10px;
