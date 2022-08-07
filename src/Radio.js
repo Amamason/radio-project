@@ -4,13 +4,12 @@ import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import './App.css';
 import Background from "./radio-bg-2.png";
-
-
+import Image from "./defaultimg.jpg";
 
 export default function Radio() {
   const [stations, setStations] = useState();
   const [stationFilter, setStationFilter] = useState("all");
-  const defaultImage = "src = ../img/defaultimg"
+  const defaultImage = Image;
 
   useEffect(() => {
     setupApi(stationFilter).then((data) => {
