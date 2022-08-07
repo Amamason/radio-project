@@ -121,14 +121,13 @@ audio {
 
 .navbuttons {
   position: absolute;
-  margin-left: 500px;
+  margin-left: 520px;
   margin-top: 25px;
   padding-left: 4em;
   z-index: 600;
   font-family: 'Press Start 2P', cursive;
-  font-size: 1rem;
+  font-size: .8rem;
 }
-
 
 .homebutton{
   color: rgb(250, 5, 242);
@@ -148,12 +147,18 @@ audio {
   text-decoration: none;
 }
 
+.blogbutton {
+  color: rgb(245, 145, 4);
+  padding-right: 10px;
+  text-decoration: none;
+}
+
 .galleryContainer {
   margin-top: 40px;
   display: flex;
-align-content: center;
-justify-content: center;
-background-color: rgb(252, 249, 67);
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(252, 249, 67);
 }
 
 .masterImage {
@@ -314,4 +319,38 @@ code {
   z-index: -1;
   }
 
+  .post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;   
+    background: rgb(252, 249, 67);
+    padding: 3%;
+}
+.blogHeading {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.3rem;
+    color: rgb(250, 5, 242);
+}
+.blogImage {
+width: 70%;
+border-radius: 20px;
+}
 
+.bodyCopy{
+  width: 70%;
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  color: rgb(250, 5, 242);
+
+
+}
+.info {
+  font-family: 'VT323', monospace;
+  color: rgb(250, 5, 242);
+
+}

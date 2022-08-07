@@ -11,6 +11,7 @@ import Header from "./Header"
 import Subscribe from './Subscribe';
 import Inspiration from './Inspiration';
 import Footer from './Footer';
+import Posts from './Posts';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
     </Route>
   
     <Route className="nav3" exact path="/subscribe" element={<Subscribe />}>
+    </Route>
+
+    <Route className="nav4" exact path="/blog" element={<Posts />}>
     </Route>
 
     </Routes>

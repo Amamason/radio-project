@@ -84,7 +84,7 @@ return (
   <div>
   <h3 className="call">why not subscribe</h3>
   <h5 className="subHead">you know you want to!</h5>
-  <p className='welcomeMessage'>We'll send you our monthly newsletter full of music news, glam rock hair updates <br></br> and even some inspirational merch so you will impress your mates with your neon spendour!</p>
+  <p className='welcomeMessage'>We'll send you our monthly newsletter full of music news, glam rock hair updates <br></br> and even some inspirational merch so you will impress your mates with your neon splendour!</p>
 
 </div>
 

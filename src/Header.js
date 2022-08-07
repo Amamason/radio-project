@@ -10,6 +10,7 @@ return (
     <NavLink className ="homebutton" exact to="/">Home</NavLink>
     <NavLink className ="subscribebutton" exact to="/subscribe">Subscribe</NavLink>
     <NavLink className ="inspirationbutton" exact to="/inspiration">Inspiration</NavLink>
+    <NavLink className ="blogbutton" exact to="/blog">Blog</NavLink>
     </div>
 
     <div className="weblogo">
