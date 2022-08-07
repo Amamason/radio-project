@@ -10,7 +10,7 @@ import Background from "./radio-bg-2.png";
 export default function Radio() {
   const [stations, setStations] = useState();
   const [stationFilter, setStationFilter] = useState("all");
-  const defaultImage = "src = ./img/defaultimg"
+  const defaultImage = "src = ../img/defaultimg"
 
   useEffect(() => {
     setupApi(stationFilter).then((data) => {
@@ -35,6 +35,8 @@ export default function Radio() {
   };
 
   const filters = [
+    "rock",
+    "retro",
     "classical",
     "country",
     "dance",
@@ -42,9 +44,7 @@ export default function Radio() {
     "house",
     "jazz",
     "pop",
-    "rap",
-    "retro",
-    "rock"
+    "rap"
   ];
 
   const setDefaultSrc = (event) => {

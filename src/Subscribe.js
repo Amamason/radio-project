@@ -1,66 +1,118 @@
-import React, { useState } from "react";
+import { useState } from 'react';
+import React from 'react';
 
-function Subscribe() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [submittedData, setSubmittedData] = useState([]);
-  const [comment, setComment] = useState("");
+export default function Subscribe() {
 
+// States for registration
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
 
-  function handleFirstNameChange(event) {
-    setFirstName(event.target.value);
-  }
+// States for checking the errors
+const [submitted, setSubmitted] = useState(false);
+const [error, setError] = useState(false);
 
-  function handleLastNameChange(event) {
-    setLastName(event.target.value);
-  }
+// Handling the name change
+const handleName = (e) => {
+setName(e.target.value);
+setSubmitted(false);
+};
 
-  function handleComment(event) {
-    setComment(event.target.value);
-  }
+// Handling the email change
+const handleEmail = (e) => {
+setEmail(e.target.value);
+setSubmitted(false);
+};
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const formData = { firstName: firstName, lastName: lastName, comment: comment };
-    const dataArray = [...submittedData, formData];
-    setSubmittedData(dataArray);
-    setFirstName("");
-    setLastName("");
-    setComment("");
-  }
+// Handling the password change
+const handlePassword = (e) => {
+setPassword(e.target.value);
+setSubmitted(false);
+};
 
-  const listOfSubmissions = submittedData.map((data, index) => {
-    return (
-      <div key={index}>
-        {data.firstName} {data.lastName} {data.comment}
-      </div>
-    );
-  });
+// Handling the form submission
+const handleSubmit = (e) => {
+e.preventDefault();
+if (name === '' || email === '' || password === '') {
+setError(true);
+} else {
+setSubmitted(true);
+setError(false);
 
-  return (
-    <div className="subscribeForm">
-
-      <h3>Subscribe to RadioStar</h3>
-
-
-      <form onSubmit={handleSubmit}>
-        <label> First name
-        <input type="text" onChange={handleFirstNameChange} value={firstName} />
-        </label>
-
-        <label> Last name
-        <input type="text" onChange={handleLastNameChange} value={lastName} />
-        </label>
-        
-        <label> Tell us what you think
-        <textarea  onChange={handleComment} value={comment} />
-        </label>
-
-        <button type="submit">Submit</button>
-      </form>
-      {listOfSubmissions}
-    </div>
-  );
+fetch("http://localhost:4000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+      }),
+    });
 }
+};
 
-export default Subscribe; 
+// Showing success message
+const successMessage = () => {
+return (
+<div
+className="success"
+style={{
+display: submitted ? '' : 'none',
+}}>
+<p> {name} successfully registered!!</p>
+</div>
+);
+};
+
+// Showing error message if error is true
+const errorMessage = () => {
+return (
+<div
+className="error"
+style={{
+display: error ? '' : 'none',
+}}>
+<h1>Please enter all the fields</h1>
+</div>
+);
+};
+
+return (
+<div className="message" >
+  <div>
+  <h3 className="call">why not subscribe</h3>
+  <h5 className="subHead">you know you want to!</h5>
+  <p className='welcomeMessage'>We'll send you our monthly newsletter full of music news, glam rock hair updates <br></br> and even some inspirational merch so you will impress your mates with your neon spendour!</p>
+
+</div>
+
+{/* Calling to the methods */}
+<div className="messages" style={{height: '100vh'}}>
+  {errorMessage()}
+  {successMessage()}
+
+<form className="subscribeForm">
+{/* Labels and inputs for form data */}
+<label className="label"></label>
+<input onChange={handleName} className="input" placeholder="Name"
+value={name} type="text" />
+
+<label className="label"></label>
+<input onChange={handleEmail} className="input" placeholder="Email"
+value={email} type="email" />
+
+<label className="label"></label>
+<input onChange={handlePassword} className="input" placeholder="Password"
+value={password} type="password" />
+
+<button onClick={handleSubmit} className="btn" type="submit">
+Submit
+</button>
+</form>
+</div>
+</div>
+
+);
+}
