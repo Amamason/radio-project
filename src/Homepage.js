@@ -3,8 +3,6 @@ import image from "../src/img/homepageimg.png";
 import { Link } from 'react-router-dom';
 
 
-const url="./Radio.js";
-
 function Homepage(){
 
 

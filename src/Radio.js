@@ -6,17 +6,19 @@ import './App.css';
 import Background from "./radio-bg-2.png";
 import Image from "./defaultimg.jpg";
 
+
+///setting up state to set stations and filters. use all to use regardless of genre
 export default function Radio() {
   const [stations, setStations] = useState();
   const [stationFilter, setStationFilter] = useState("all");
   const defaultImage = Image;
-
+// when station filter clicked calls function, sets up api, sets data into setstations
   useEffect(() => {
     setupApi(stationFilter).then((data) => {
       setStations(data);
     });
   }, [stationFilter]);
-
+///call the api. from npm docs
   const setupApi = async (stationFilter) => {
     const api = new RadioBrowserApi(fetch.bind(window), "My Radio App");
 
@@ -32,7 +34,7 @@ export default function Radio() {
 
     return stations;
   };
-
+///searching by tag on api
   const filters = [
     "rock",
     "retro",
@@ -49,7 +51,9 @@ export default function Radio() {
   const setDefaultSrc = (event) => {
     event.target.src = defaultImage;
   };
-
+///mapping through all the filters
+///setting click event to select the filter
+///setting up the radio name and station icon
   return (
     <div className="radio">
       <div className="filters">

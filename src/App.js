@@ -25,24 +25,24 @@ function App() {
 
     <Routes>
 
-    <Route className="nav0" exact path="/home" element={<Homepage />}>
-    </Route>
-
-    <Route className="nav1" exact path="/radio" element={<Radio />}>
+    <Route className="nav0" path="/home" element={<Homepage />}>
     </Route>
     
-    <Route className="nav2" exact path="/inspiration" element={<Inspiration />}>
+    <Route className="nav1" path="/radio" element={<Radio />}>
+    </Route>
+    
+    <Route className="nav2" path="/inspiration" element={<Inspiration />}>
     </Route>
   
-    <Route className="nav3" exact path="/subscribe" element={<Subscribe />}>
+    <Route className="nav3" path="/subscribe" element={<Subscribe />}>
     </Route>
 
-    <Route className="nav4" exact path="/blog" element={<Posts />}>
+    <Route className="nav4" path="/blog" element={<Posts />}>
     </Route>
 
     </Routes>
-  
-    <Footer />
+
+    {Location.pathname !== '/blog' && <Footer />}
     </React.Fragment>
     </Router>
     </>
