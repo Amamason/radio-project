@@ -12,6 +12,7 @@ import Subscribe from './Subscribe';
 import Inspiration from './Inspiration';
 import Footer from './Footer';
 import Posts from './Posts';
+import Homepage from './Homepage';
 
 
 function App() {
@@ -24,8 +25,10 @@ function App() {
 
     <Routes>
 
+    <Route className="nav0" exact path="/home" element={<Homepage />}>
+    </Route>
 
-    <Route className="nav1" exact path="/" element={<Radio />}>
+    <Route className="nav1" exact path="/radio" element={<Radio />}>
     </Route>
     
     <Route className="nav2" exact path="/inspiration" element={<Inspiration />}>

@@ -23,6 +23,7 @@ import inspo20 from "../src/inspopics/inspo20.jpg";
 
 import { Component } from "react";
 
+//setting the array of inspo images
 class Inspiration extends Component {   
 state = {
   
@@ -31,7 +32,7 @@ inspo8, inspo9, inspo10, inspo11, inspo12, inspo13, inspo14, inspo15, inspo15,
 inspo16, inspo17, inspo18, inspo19, inspo20]
 }
 
-
+//setting state to +1 to go to the next image when button clicked
 onClickNext= () => {
     if (this.state.index + 1 === this.state.picList.length ){
       this.setState({
@@ -44,6 +45,7 @@ onClickNext= () => {
     }
   }
 
+  //setting the state to -1 to go to the next image when button clicked
   onClickPrevious= () => {
     if (this.state.index - 1 === -1 ){
         this.setState({ 
@@ -56,6 +58,7 @@ onClickNext= () => {
       }
     }
 
+//creating the image gallery and buttons
 render() {
 return (
   <div className="galleryContainer"style={{width: '100vw'}}>
